@@ -1,0 +1,15 @@
+JSX란
+자바스크립트 안에서 html을 쉽게 작성할 수 있게 도와주는 방법
+.js 파일에서 쓰는 html 대용품
+
+JSX 문법
+1. class 넣을 땐 className
+2. 변수를 넣을 때 {중괄호} => 데이터바인딩은{중괄호}
+3. style 넣을 땐 style={{스타일명 : '값'}}
+
+state
+자료를 잠깐 저장할 때 state를 사용
+state 만드는 법
+  1. import { useState }
+  2. useState(보관할 자료)
+  3. letlet[작명, 작명] => [state에 보관했던 자료, state 변경도와주는 함수]
