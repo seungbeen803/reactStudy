@@ -13,3 +13,8 @@ state 만드는 법
   1. import { useState }
   2. useState(보관할 자료)
   3. letlet[작명, 작명] => [state에 보관했던 자료, state 변경도와주는 함수]
+
+state문법 쓰는 이유
+변수, state 차이점
+ -> 일반 변수는 갑자기 변경되면 html에 자동으로 반영이 안되지만,
+ state는 갑자기 변경되면 state를 쓰던 html은 자동 재렌더링 되므로 편리하다
