@@ -11,13 +11,6 @@ function App() {
   // 2. useState(보관할 자료)
   // 3. let[작명, 작명] => [state에 보관했던 자료, state 변경도와주는 함수]
   let [title, b] = useState('남자 코트 추천')
-
-  let num = [1, 2];
-
-  let [a, c] = [1, 2];
-
-  // let a = num[0];
-  // let c = num[1];
   
   // return() 안에는 병렬로 태그 2개 이상 기입금지
   return (
