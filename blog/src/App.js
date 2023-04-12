@@ -14,7 +14,8 @@ function App() {
   // 숙제 : 제목들 state로 만들기
   // array 자료형
   let [title, b] = useState(['남자코트 추천', '강남 우동맛집', '리액트독학']);
-  let [heart] = useState('0');
+  let [heart, heartChange] = useState(0);
+  // 숙제 : 버튼누르면 첫 글이 '여자코트 추천'으로 바뀌는 기능만들기
   
   // return() 안에는 병렬로 태그 2개 이상 기입금지
   return (
@@ -23,7 +24,8 @@ function App() {
         <h4>ReactBlog</h4>
       </div>
       <div className='list'>
-        <h4>{title[0]} <span onClick={() => { console.log(1)}}>❤</span> {heart} </h4>
+        {/* state 변경하는 법-> 등호로 변경금지 */}
+        <h4>{title[0]} <span onClick={() => { heartChange(heart+1) }}>❤</span> {heart} </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
