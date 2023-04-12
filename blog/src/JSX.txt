@@ -5,4 +5,4 @@ JSX란
 JSX 문법
 1. class 넣을 땐 className
 2. 변수를 넣을 때 {중괄호} => 데이터바인딩은{중괄호}
-3. style 넣을 땐 style={}
+3. style 넣을 땐 style={{스타일명 : '값'}}
