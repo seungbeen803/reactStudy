@@ -40,7 +40,10 @@ function App() {
       }}>글수정</button>
 
       {/* 숙제 : 버튼 누르면 글제목 가나다순 정렬 기능 만들기 */}
-      <button >가나다순정렬</button>
+      <button onClick={() => {
+        let titleSort = [...title];
+        titleChange(titleSort.sort());
+      }}>가나다순정렬</button>
 
       <div className='list'>
         {/* state 변경하는 법-> 등호로 변경금지 */}
