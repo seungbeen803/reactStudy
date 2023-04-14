@@ -13,8 +13,8 @@ function App() {
 
   // 숙제 : 제목들 state로 만들기
   // array 자료형
-  let [title, titleChange] = useState(['남자코트 추천', '강남 우동맛집', '리액트독학']);
-  let [heart, heartChange] = useState(0);
+  let [title, setTitle] = useState(['남자코트 추천', '강남 우동맛집', '리액트독학']);
+  let [heart, setHeart] = useState([0, 0, 0]);
   // 2. UI의 현재 상태를 state로 저장
   // 형식은 자유 모달창상태 표현만 가능하면 됨
   let [modal, setModal] = useState(false); // 스위치 역할
@@ -52,18 +52,18 @@ function App() {
         // ... : 괄호 벗기기
         let copy = [...title];
         copy[0] = '여자코트 추천';
-        titleChange(copy);
+        setTitle(copy);
       }}>수정</button> */}
 
       {/* 숙제 : 버튼 누르면 글제목 가나다순 정렬 기능 만들기 */}
       {/* <button onClick={() => {
         let titleSort = [...title];
-        titleChange(titleSort.sort());
+        setTitle(titleSort.sort());
       }}>정렬버튼</button> */}
 
       {/* <div className='list'>
         // state 변경하는 법-> 등호로 변경금지
-        <h4>{title[0]} <span onClick={() => { heartChange(heart + 1) }}>❤</span> {heart} </h4>
+        <h4>{title[0]} <span onClick={() => { setHeart(heart + 1) }}>❤</span> {heart} </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
@@ -90,12 +90,20 @@ function App() {
           return (
             <div className='list'>
               {/* <h4>{a}</h4> */}
-              <h4>{title[i]}</h4>
+              <h4>
+                {title[i]}
+                <span onClick={() => {
+                  let copy = [...heart];
+                  copy[i] += 1;
+                  setHeart(copy);
+                }}> ❤️ </span> {heart[i]}
+              </h4>
               <p>2월 17일 발행</p>
             </div>
           )
         })
       }
+
 
       {/* 둘다 사용 가능 */}
       {/* 3. state에 따라 UI가 어떻게 보일지 작성(조건문) */}
