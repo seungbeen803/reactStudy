@@ -18,6 +18,19 @@ function App() {
   // 2. UI의 현재 상태를 state로 저장
   // 형식은 자유 모달창상태 표현만 가능하면 됨
   let [modal, setModal] = useState(false); // 스위치 역할
+
+  // map() 사용법 -> 괄호 안에 들어가는 함수를 callback함수라고 한다.
+  // map을 사용할 때는 callback()을 사용하는데
+
+  // map의 기능
+  [1, 2, 3].map(function (a) {
+    // 1. array자료 개수만큼 함수안의 코드 실행해줌
+    // console.log(1);
+    // 2. 함수의 파라미터는 array안에 있던 자료임
+    // console.log(a);
+    // 3. return에 뭐 적으면 array로 담아줌
+    return '1233211';
+  });
   
   // return() 안에는 병렬로 태그 2개 이상 기입금지
   return (
