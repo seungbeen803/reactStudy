@@ -89,14 +89,13 @@ function App() {
         title.map(function (a, i) {
           return (
             <div className='list'>
-              {/* <h4>{a}</h4> */}
               <h4>
                 {title[i]}
                 <span onClick={() => {
                   let copy = [...heart];
                   copy[i] += 1;
                   setHeart(copy);
-                }}> ❤️ </span> {heart[i]}
+                }}>❤️</span> {heart[i]}
               </h4>
               <p>2월 17일 발행</p>
             </div>
