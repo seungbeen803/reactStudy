@@ -61,8 +61,8 @@ function App() {
         titleChange(titleSort.sort());
       }}>정렬버튼</button> */}
 
-      <div className='list'>
-        {/* state 변경하는 법-> 등호로 변경금지 */}
+      {/* <div className='list'>
+        // state 변경하는 법-> 등호로 변경금지
         <h4>{title[0]} <span onClick={() => { heartChange(heart + 1) }}>❤</span> {heart} </h4>
         <p>2월 17일 발행</p>
       </div>
@@ -71,19 +71,26 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
-        {/* ! 느낌표 기호는 true 왼쪽에 붙이면 false로 바꿔주고 
-      false 왼쪽에 붙이면 true로 바꿔줍니다
-      !true는 출력해보면 false입니다.
-      !false는 출력해보면 true입니다. */}
+      //   ! 느낌표 기호는 true 왼쪽에 붙이면 false로 바꿔주고 
+      // false 왼쪽에 붙이면 true로 바꿔줍니다
+      // !true는 출력해보면 false입니다.
+      // !false는 출력해보면 true입니다.
         <h4 onClick={() => { setModal(!modal) }} >{title[2]}</h4>
         <p>2월 17일 발행</p>
-      </div>
+      </div> */}
 
       {
-        title.map(function () {
+        // map()함수
+        // 1. 왼쪽 array 자료만큼 내부코드 실행
+        // 2. return 오른쪽에 있는걸 array로 담아줌
+        // 3. 유용한 파라미터 2개 사용가능
+        // a는 array안에 있던 데이터
+        // i는 반복문 돌 때마다 0부터 1씩 증가하는 정수
+        title.map(function (a, i) {
           return (
             <div className='list'>
-              <h4>{title[1]}</h4>
+              {/* <h4>{a}</h4> */}
+              <h4>{title[i]}</h4>
               <p>2월 17일 발행</p>
             </div>
           )
