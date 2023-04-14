@@ -80,7 +80,7 @@ function App() {
       </div>
 
       {
-        [1, 2, 3].map(function () {
+        title.map(function () {
           return (
             <div className='list'>
               <h4>{title[1]}</h4>
