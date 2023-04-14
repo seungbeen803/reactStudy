@@ -79,6 +79,11 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       
+      {
+        [1, 2, 3].map(function() {
+          return <div>안녕</div>
+        })
+      }
 
       {/* 둘다 사용 가능 */}
       {/* 3. state에 따라 UI가 어떻게 보일지 작성(조건문) */}
