@@ -10,7 +10,7 @@ function App() {
   // 1. import { useState }
   // 2. useState(보관할 자료)
   // 3. let[작명, 작명] => [state에 보관했던 자료, state 변경도와주는 함수]
-  
+
   // 숙제 : 제목들 state로 만들기
   // array 자료형
   let [title, titleChange] = useState(['남자코트 추천', '강남 우동맛집', '리액트독학']);
@@ -31,7 +31,7 @@ function App() {
     // 3. return에 뭐 적으면 array로 담아줌
     return '1233211';
   });
-  
+
   // return() 안에는 병렬로 태그 2개 이상 기입금지
   return (
     <div className="App">
@@ -63,7 +63,7 @@ function App() {
 
       <div className='list'>
         {/* state 변경하는 법-> 등호로 변경금지 */}
-        <h4>{title[0]} <span onClick={() => { heartChange(heart+1) }}>❤</span> {heart} </h4>
+        <h4>{title[0]} <span onClick={() => { heartChange(heart + 1) }}>❤</span> {heart} </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
@@ -71,17 +71,22 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
-      {/* ! 느낌표 기호는 true 왼쪽에 붙이면 false로 바꿔주고 
+        {/* ! 느낌표 기호는 true 왼쪽에 붙이면 false로 바꿔주고 
       false 왼쪽에 붙이면 true로 바꿔줍니다
       !true는 출력해보면 false입니다.
       !false는 출력해보면 true입니다. */}
         <h4 onClick={() => { setModal(!modal) }} >{title[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
-      
+
       {
-        [1, 2, 3].map(function() {
-          return <div>안녕</div>
+        [1, 2, 3].map(function () {
+          return (
+            <div className='list'>
+              <h4>{title[1]}</h4>
+              <p>2월 17일 발행</p>
+            </div>
+          )
         })
       }
 
@@ -90,11 +95,11 @@ function App() {
       {/* 삼항연산자(ternary operator)
         (조건식) ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드*/}
       {
-        (modal === true) ? <Modal/> : null
+        (modal === true) ? <Modal /> : null
       }
       {/* <Modal></Modal> */}
       {/* <Modal/> */}
-      
+
     </div>
   );
 }
@@ -108,11 +113,11 @@ function App() {
 // 동적인 UI만드는 step
 // 1. html css로 미리 디자인 완성
 function Modal() {
-  return(
+  return (
     <div className='modal'>
-        <h4>제목</h4>
-        <p>날짜</p>
-        <p>상세내용</p>
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
     </div>
   )
 }
