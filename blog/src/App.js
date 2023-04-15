@@ -92,6 +92,7 @@ function App() {
               <h4>
                 {title[i]}
                 <span onClick={() => {
+                  // 중요
                   let copy = [...heart];
                   copy[i] += 1;
                   setHeart(copy);
