@@ -89,7 +89,7 @@ function App() {
         title.map(function (a, i) {
           return (
             <div className='list'>
-              <h4>
+              <h4 onClick={() => { setModal(!modal) }}>
                 {title[i]}
                 <span onClick={() => {
                   // 중요
@@ -110,7 +110,7 @@ function App() {
       {/* 삼항연산자(ternary operator)
         (조건식) ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드*/}
       {
-        (modal === true) ? <Modal /> : null
+        (modal === true) ? <Modal color={'lightcoral'} title={title} /> : null
       }
       {/* <Modal></Modal> */}
       {/* <Modal/> */}
@@ -127,10 +127,10 @@ function App() {
 
 // 동적인 UI만드는 step
 // 1. html css로 미리 디자인 완성
-function Modal() {
+function Modal(props) {
   return (
-    <div className='modal'>
-      <h4>제목</h4>
+    <div className='modal' style={{ background: props.color }}>
+      <h4>{props.title[0]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
     </div>
