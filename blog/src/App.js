@@ -110,7 +110,7 @@ function App() {
       {/* 삼항연산자(ternary operator)
         (조건식) ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드*/}
       {
-        (modal === true) ? <Modal color={'lightcoral'} title={title} /> : null
+        (modal === true) ? <Modal title={title} setTitle={setTitle} /> : null
       }
       {/* <Modal></Modal> */}
       {/* <Modal/> */}
@@ -118,7 +118,6 @@ function App() {
     </div>
   );
 }
-
 // 컴포넌트 만드는 법
 // 1. function 만들기
 // 2. return() 안에 html담기
@@ -129,10 +128,17 @@ function App() {
 // 1. html css로 미리 디자인 완성
 function Modal(props) {
   return (
-    <div className='modal' style={{ background: props.color }}>
+    <div className='modal'>
       <h4>{props.title[0]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
+      {/* 오늘의 숙제
+      글수정 버튼 누르면  첫 글제목이 '여자코트 추천'으로 바뀌어야함 */}
+      <button onClick={() => {
+        let copy2 = [...props.title];
+        copy2[0] = '여자코트 추천';
+        props.setTitle(copy2);
+      }}>글수정</button>
     </div>
   )
 }
