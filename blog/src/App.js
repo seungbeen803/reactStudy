@@ -112,6 +112,7 @@ function App() {
       {/* 삼항연산자(ternary operator)
         (조건식) ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드*/}
       {
+        // App() 안에 있는 useState만 작성
         (modal === true) ? <Modal title={title} setTitle={setTitle} titles={titles} color={'lightgray'} /> : null
       }
       {/* <Modal></Modal> */}
