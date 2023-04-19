@@ -117,7 +117,8 @@ function App() {
       {/* <Modal></Modal> */}
       {/* <Modal/> */}
 
-      {/* <button onClick={() => { setTitles(0) }}>0번글</button>
+      {/* setTitle(i) ===
+      <button onClick={() => { setTitles(0) }}>0번글</button>
       <button onClick={() => { setTitles(1) }}>1번글</button>
       <button onClick={() => { setTitles(2) }}>2번글</button> */}
     </div>
