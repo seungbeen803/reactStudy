@@ -19,6 +19,8 @@ function App() {
   // 형식은 자유 모달창상태 표현만 가능하면 됨
   let [modal, setModal] = useState(false); // 스위치 역할
 
+  let [titles, setTitles] = useState(0);
+
   // map() 사용법 -> 괄호 안에 들어가는 함수를 callback함수라고 한다.
   // map을 사용할 때는 callback()을 사용하는데
 
@@ -89,7 +91,7 @@ function App() {
         title.map(function (a, i) {
           return (
             <div className='list'>
-              <h4 onClick={() => { setModal(!modal) }}>
+              <h4 onClick={() => { setModal(!modal); setTitles(i) }}>
                 {title[i]}
                 <span onClick={() => {
                   // 중요
@@ -110,7 +112,7 @@ function App() {
       {/* 삼항연산자(ternary operator)
         (조건식) ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드*/}
       {
-        (modal === true) ? <Modal title={title} setTitle={setTitle} color={'lightgray'} /> : null
+        (modal === true) ? <Modal title={title} setTitle={setTitle} titles={titles} color={'lightgray'} /> : null
       }
       {/* <Modal></Modal> */}
       {/* <Modal/> */}
@@ -133,7 +135,7 @@ function App() {
 function Modal(props) {
   return (
     <div className='modal' style={{ background: props.color }}>
-      <h4>{props.title}</h4>
+      <h4>{props.title[props.titles]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
       <button onClick={() => { put(props) }}>글수정</button>
