@@ -20,6 +20,8 @@ function App() {
   let [modal, setModal] = useState(false); // 스위치 역할
 
   let [titles, setTitles] = useState(0);
+  let [input, setInput] = useState('');
+
 
   // map() 사용법 -> 괄호 안에 들어가는 함수를 callback함수라고 한다.
   // map을 사용할 때는 callback()을 사용하는데
@@ -93,9 +95,11 @@ function App() {
         title.map(function (a, i) {
           return (
             <div className='list'>
-              <h4 onClick={() => { setModal(!modal); setTitles(i) }}>
+              <h4 onClick={(e) => { setModal(!modal); setTitles(i) }}>
                 {title[i]}
-                <span onClick={() => {
+                {/* e.stopPropagation(); /-> 상위 html로 퍼지는 이벤트 버블링을 막고 싶을 때 사용 */}
+                <span onClick={(e) => {
+                  e.stopPropagation();
                   // 중요
                   let copy = [...heart];
                   copy[i] += 1;
@@ -107,6 +111,26 @@ function App() {
           )
         })
       }
+
+      {/* (정보)state변경함수는 늦게처림됨 -> 비동기*/}
+
+      {/* type = text, range, checkbox, date */}
+      {/* onChange는 유저가 입력할 때마다 onChange안의 코드 실행 */}
+      {/* onInput */}
+      {/* e : 지금 발생하는 이벤트에 관련한 여러 기능이 담겨있음 */}
+      <div className='publish'>
+        <input onChange={(e) => { setInput(e.target.value) }} />
+        <button onClick={() => {
+          let newTitle = [...title];
+          // unshift() 메서드는 새로운 요소를 배열의 맨 앞쪽에 추가하고, 새로운 길이를 반환함
+          newTitle.unshift(input);
+          setTitle(newTitle);
+        }}>등록하기</button>
+      </div>
+
+
+      {/* <select></select> */}
+      {/* <textarea></textarea> */}
 
 
       {/* 둘다 사용 가능 */}
@@ -153,5 +177,7 @@ const put = (props) => {
   copy[0] = '여자코트 추천';
   props.setTitle(copy);
 }
+
+
 
 export default App;
