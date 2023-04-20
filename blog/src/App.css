@@ -27,6 +27,38 @@ div {
   text-align: left;
 }
 
+.publish {
+  margin: 20px 0;
+}
+
+.publish input {
+  width: 65%;
+  height: 25px;
+  font-size: 18px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background: #eee;
+}
+
+.publish input:focus {
+  outline: none;
+}
+
+.publish button {
+  padding: 13px 30px;
+  border-radius: 5px;
+  border: 1px solid lightcoral;
+  margin-left: 5px;
+}
+
+.publish button:hover {
+  background: lightpink;
+  color: white;
+  transition: all 0.5s;
+  transform: scale(1.05);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
