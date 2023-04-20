@@ -20,7 +20,8 @@ function App() {
   let [modal, setModal] = useState(false); // 스위치 역할
 
   let [titles, setTitles] = useState(0);
-  let [input, setInput] = useState('');
+  let [input, setInput] = useState("");
+
 
 
   // map() 사용법 -> 괄호 안에 들어가는 함수를 callback함수라고 한다.
@@ -107,6 +108,14 @@ function App() {
                 }}>❤️</span> {heart[i]}
               </h4>
               <p>2월 17일 발행</p>
+
+              {/* 삭제 기능 구현 */}
+              <button onClick={(e) => {
+                e.stopPropagation();
+                let deleteTitle = [...title];
+                deleteTitle.splice(i, 1);
+                setTitle(deleteTitle);
+              }}>삭제</button>
             </div>
           )
         })
@@ -116,13 +125,16 @@ function App() {
 
       {/* type = text, range, checkbox, date */}
       {/* onChange는 유저가 입력할 때마다 onChange안의 코드 실행 */}
-      {/* onInput */}
-      {/* e : 지금 발생하는 이벤트에 관련한 여러 기능이 담겨있음 */}
+      {/* <input>에 뭔가 입력시 코드 실행하고 싶으면 onChange/onInput */}
+
       <div className='publish'>
+        {/* e : 지금 발생하는 이벤트에 관련한 여러 기능이 담겨있음 */}
+        {/* target : 이벤트 발생한 html태그 */}
+        {/* value : 이벤트 발생한 html태그에 입력한 값 */}
         <input onChange={(e) => { setInput(e.target.value) }} />
+        {/* 숙제 : 버튼 누르면 글 하나 추가되는 기능 구현 */}
         <button onClick={() => {
           let newTitle = [...title];
-          // unshift() 메서드는 새로운 요소를 배열의 맨 앞쪽에 추가하고, 새로운 길이를 반환함
           newTitle.unshift(input);
           setTitle(newTitle);
         }}>등록하기</button>
@@ -148,7 +160,7 @@ function App() {
       <button onClick={() => { setTitles(0) }}>0번글</button>
       <button onClick={() => { setTitles(1) }}>1번글</button>
       <button onClick={() => { setTitles(2) }}>2번글</button> */}
-    </div>
+    </div >
   );
 }
 
@@ -166,7 +178,7 @@ function Modal(props) {
       <h4>{props.title[props.titles]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
-      <button onClick={() => { put(props) }}>글수정</button>
+      {/* <button onClick={() => { put(props) }}>글수정</button> */}
     </div>
   );
 }
