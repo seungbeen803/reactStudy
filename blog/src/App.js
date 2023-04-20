@@ -88,6 +88,8 @@ function App() {
         // 3. 유용한 파라미터 2개 사용가능
         // a는 array안에 있던 데이터
         // i는 반복문 돌 때마다 0부터 1씩 증가하는 정수
+
+        // map 반복문 안에서 i는 1씩 증가(0, 1, 2..)
         title.map(function (a, i) {
           return (
             <div className='list'>
